@@ -21,14 +21,9 @@ class ChapterView(generic.DetailView):
         queryset = FictionChapter.objects.filter(pk=chapter_pk)
         return queryset.get()
 
-
-def fiction_view(request, fiction_id):
-    """Create view of fiction for show fiction's title and list of episode."""
+class FictionView(generic.DetailView):
     template_name = "fiction_fans/fiction_page.html"
-    fiction = FictionTitle.objects.get(id=fiction_id)
-    chapters = FictionChapter.objects.filter(fiction_title=fiction)
-    context = {
-        "fiction": fiction,
-        "chapters": chapters,
-    }
-    return render(request, template_name, context=context)
+    model = FictionTitle
+
+    def get_object(self, queryse=None):
+        return FictionTitle.objects.get(pk=self.kwargs.get("fiction_pk"))

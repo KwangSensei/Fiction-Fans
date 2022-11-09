@@ -1,2 +1,2 @@
-from .fiction_view import ChapterView, fiction_view
+from .fiction_view import ChapterView, FictionView
 from .homepage_view import HomePage
