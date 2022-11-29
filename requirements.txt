@@ -5,3 +5,4 @@ whitenoise
 Pillow
 django-allauth
 pyrebase
+urllib3
