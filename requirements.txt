@@ -4,3 +4,4 @@ python-decouple
 whitenoise
 Pillow
 django-allauth
+pyrebase
